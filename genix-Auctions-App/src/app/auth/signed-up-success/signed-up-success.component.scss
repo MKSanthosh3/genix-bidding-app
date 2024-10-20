@@ -1,0 +1,31 @@
+  .container-fluid {
+    background-color: #f8f9fa;
+  }
+  h2 {
+    font-size: 2rem;
+    color: #000;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    border: none;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #0069d9, #008ecc);
+  }
+  @media (max-width: 991.98px) {
+    .signup-navbar {
+      position: relative;
+      box-shadow: none;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    .btn-lg {
+      font-size: 1rem;
+      padding: 0.75rem 1.25rem;
+    }
+  }

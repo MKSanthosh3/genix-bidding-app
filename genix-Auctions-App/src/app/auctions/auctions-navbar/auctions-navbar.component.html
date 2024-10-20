@@ -1,0 +1,82 @@
+ <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+  <a class="navbar-brand d-flex align-items-center nav-link">
+    <img src="../../../assets/images/login/vector.png"  alt="Genix Auctions Logo" class="logo me-2" />
+    <span class="brand-title">Genix Auctions</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link active fw-bold" [routerLink]="['/auctions/welcome']">Auctions</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="biddingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Bidding
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="biddingDropdown">
+          <li><a class="dropdown-item" href="#">How to Bid</a></li>
+          <li><a class="dropdown-item" href="#">Bidding Tips</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          About us
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Our Story</a></li>
+          <li><a class="dropdown-item" href="#">Team</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="langauge-icon"></span>English
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+          <li><a class="dropdown-item" href="#">English</a></li>
+          <li><a class="dropdown-item" href="#">Spanish</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary fw-bold" *ngIf="currentUrl.endsWith('/auctions/auctions-dashboard')" (click)="onLogin()">Login</a>        
+      </li>  
+    
+      <div ngbDropdown class="d-inline-block login-icon" *ngIf="!currentUrl.endsWith('/auctions/auctions-dashboard')">
+        <button class="btn btn-link nav-link dropdown-toggle text-primary fw-bold" id="userDropdown" ngbDropdownToggle>
+          <img src="../../../assets/images/login/login_avatar.png" alt="User" class="user-profile-image " />
+        </button>
+        <div ngbDropdownMenu aria-labelledby="userDropdown">
+          <div class="dropdown-header d-flex align-items-center">
+            <img src="../../../assets/images/login/activelogin_avatar.png" alt="User" class="user-profile-image me-2" />
+            <div *ngIf="user$ | async as user;">
+              <span class="fw-bold">{{ user.firstName }} {{ user.lastName }}</span><br>
+              <small>{{ user.email }}</small>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <button ngbDropdownItem>View profile</button>
+          <button ngbDropdownItem>Settings</button>
+          <button ngbDropdownItem>My bids</button>
+          <button ngbDropdownItem>Credit cards</button>
+          <button ngbDropdownItem>My Auctions</button>
+          <button ngbDropdownItem>Invite colleagues</button>
+          <button ngbDropdownItem>Notifications</button>
+          <button ngbDropdownItem>Community</button>
+          <button ngbDropdownItem>Support</button>
+          <button ngbDropdownItem>API</button>
+          <div class="dropdown-divider"></div>
+          <button ngbDropdownItem (click)="onLogout()">Log out</button>
+        </div>
+      </div>
+      
+      <li class="nav-item">
+        <a class="btn btn-primary ms-2 btn-get-started" *ngIf="currentUrl.endsWith('/auctions/auctions-dashboard')" (click)="onSignUp()" >Get Started</a>
+        
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+

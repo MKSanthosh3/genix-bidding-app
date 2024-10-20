@@ -1,0 +1,29 @@
+.card {
+    border-radius: 10px;
+  }
+  .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    border: none;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #0069d9, #008ecc);
+  }
+  @media (max-width: 768px) {
+    .col-md-4, .col-md-8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .card{
+    border-color: white;
+}
+
+.list-group-item{
+    border-color: white;
+}
+

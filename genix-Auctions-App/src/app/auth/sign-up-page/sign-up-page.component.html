@@ -1,0 +1,78 @@
+<div class="container-fluid d-flex align-items-center">
+  <div class="row w-100">
+    <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center signup-form-container">
+      <div class="w-100 p-5">
+        <div class="login-header mb-3">Sign Up</div>
+        <div class="login-subheader mb-4">New bidders, as soon as you have submitted your information you will be
+          eligible to bid in the auction.</div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-group mb-3">
+            <label for="formGroupFirstNameInput" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="formGroupFirstNameInput" formControlName="firstName"
+              placeholder="First Name" />
+            <div
+              *ngIf="signupForm.get('firstName')?.invalid && (signupForm.get('firstName')?.touched || signupForm.get('firstName')?.dirty)"
+              class="text-danger">
+              <small *ngIf="signupForm.get('firstName')?.errors?.['required']">First name is required.</small>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="formGroupLastNameInput" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="formGroupLastNameInput" formControlName="lastName"
+              placeholder="Last Name" />
+            <div
+              *ngIf="signupForm.get('lastName')?.invalid && (signupForm.get('lastName')?.touched || signupForm.get('lastName')?.dirty)"
+              class="text-danger">
+              <small *ngIf="signupForm.get('lastName')?.errors?.['required']">Last name is required.</small>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email"
+              placeholder="Enter email" />
+            <div
+              *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.touched || signupForm.get('email')?.dirty)"
+              class="text-danger">
+              <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</small>
+              <small *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email address.</small>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password"
+              placeholder="Password" />
+            <div
+              *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)"
+              class="text-danger">
+              <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</small>
+              <small *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters
+                long.</small>
+            </div>
+          </div>
+
+          <div class="form-group form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="receiveEmails" />
+            <label class="form-check-label" for="exampleCheck1">Receive outbid emails</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 new-btn-continue"
+            [disabled]="signupForm.invalid">Submit</button>
+        </form>
+        <div class="d-flex justify-content-center mb-4">
+          <img src="../../../assets/images/login/login-container.png" alt="Login Illustration" class="img-fluid" />
+        </div>
+        <div class="signup-div text-center mt-3">
+          <span class="account-text">Want to know more?</span>
+          <span class="signup-link"> Auction rules</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
+      <img src="../../../assets/images/signup-image.png" alt="Signup Illustration" class="img-fluid"
+        style="max-width: 80%;" />
+    </div>
+  </div>
+</div>

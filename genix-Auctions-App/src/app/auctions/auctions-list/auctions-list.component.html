@@ -1,0 +1,41 @@
+<div class="container-fluid min-vh-100 bg-white">
+	<div class="d-flex justify-content-between align-items-center mx-5 mt-4">
+		<div class="text-center mt-5" *ngIf="user$ | async as user">
+			<h1 class="fw-bold">Welcome <span class="text-primary">{{ user.firstName }} {{ user.lastName }}</span></h1>
+		  </div>
+		  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-3">
+			<select class="form-select w-100 w-md-auto mb-3 mb-md-0">
+			  <option selected>Showing all</option>
+			  <option value="1">Live Auctions</option>
+			  <option value="2">Ended Auctions</option>
+			  <option value="3">Upcoming Auctions</option>
+			</select>
+		  </div>
+	</div>
+	<div class="row m-4">
+	  <div *ngFor="let auctionItem of auctionItems" class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div style="position: relative;">
+                <img [src]="auctionItem.imageUrl" class="auction-image" [alt]="auctionItem.name">
+                <i class="fas fa-heart favorite-icon"></i>
+            </div>
+            <div class="auction-content">
+                <span class="live-badge">Live Auction</span>
+                <div class="auction-title">{{ auctionItem.name }}</div>
+                <div class="bid-info">
+                    <div>Minimum Bid:</div>
+                    <div><strong>${{ auctionItem.minimumBid }}</strong></div>
+                </div>
+                <div class="bid-info">
+                    <div>Current Bid:</div>
+                    <div><strong>${{ auctionItem.currentBid }}</strong></div>
+                </div>
+                <div class="countdown">
+                    <strong>Ends in:</strong> {{ auctionItem.endTime }}
+                </div>
+                <button class="btn btn-warning bid-now-btn w-100" (click)="bidNow(auctionItem)">Bid now <span class="right-icon"></span></button>
+            </div>
+        </div>
+    </div>
+	</div>
+  </div>

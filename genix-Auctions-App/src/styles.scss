@@ -1,0 +1,228 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: 'Manrope';
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.btn-primary {
+  background: linear-gradient(79.69deg, #1D4ED8 -0.64%, #5AD7FE 107.84%);
+}
+
+.new-btn-continue {
+  width: Fill (392px)px;
+  height: Hug (44px)px;
+  padding: 11px 24px 11px 24px;
+  gap: 0px;
+  border-radius: 4px;
+  opacity: 0px;
+}
+
+.navbar {
+  background-color: #FFE5F1 !important;
+}
+
+label {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.12px;
+  text-align: left;
+  padding-bottom: 2%;
+  color: #191D23;
+
+}
+
+.login-header {
+  font-family: Manrope;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30.05px;
+  text-align: left;
+  color: #191D23;
+  padding-bottom: 3%;
+}
+
+.login-subheader {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.12px;
+  text-align: left;
+  color: #64748B;
+  margin-bottom: 5%;
+}
+
+.form-group {
+  margin-bottom: 2%;
+}
+
+.signup-link {
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.83px;
+  text-align: center;
+  color: #1d4ed8;
+}
+
+.signup-div {
+  margin-top: 5%;
+  text-align: center;
+}
+
+
+.right-icon {
+  background-image: url('assets/icons/right-icon.png');
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.bid-price {
+  font-family: Manrope;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32.78px;
+  text-align: left;
+  color: #191D23;
+  margin-right: 2%;
+}
+
+.bid-subheader {
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.86px;
+  text-align: left;
+  color: #191D23;
+  width: 200px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+  ;
+}
+
+.card-text {
+  margin-bottom: 2%;
+}
+
+.card-body {
+  padding-top: 2%;
+}
+
+.btn-warning {
+  background: linear-gradient(79.69deg, #DB2721 -0.64%, #5AD7FE 107.84%);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-warning:hover {
+  color: #ffffff;
+}
+
+.bidnow-btn {
+  width: Fill (265px)px;
+  height: Hug (42px)px;
+  padding: 11px 24px 11px 24px;
+  gap: 0px;
+  border-radius: 4px;
+  opacity: 0px;
+}
+
+.modal-content {
+  padding: 5%;
+}
+
+.nav-link {
+  margin-left: 2%;
+}
+
+//product details
+
+.auction-card {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  margin-bottom: 16px;
+}
+
+.auction-card:hover {
+  transform: scale(1.05);
+}
+
+.auction-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.auction-content {
+  padding: 20px;
+}
+
+.live-badge {
+  display: inline-block;
+  background-color: #21a453;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.auction-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.bid-info {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bid-info strong {
+  font-weight: bold;
+}
+
+.countdown {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.bid-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.bid-button:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}

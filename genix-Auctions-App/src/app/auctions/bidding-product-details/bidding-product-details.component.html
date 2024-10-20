@@ -1,0 +1,87 @@
+<div class="container-fluid mt-4">
+    <div class="row" *ngIf="auctionItem$ | async as auctionItem">
+      <div class="col-lg-2 mb-2" >
+        <img class="mb-3" [routerLink]="['/auctions/welcome']" src="../../../assets/images/bid/catalog-text.png"  alt="back to Catalog">       
+        <div class="card h-100">
+          <div style="position: relative;">
+              <img [src]="auctionItem.imageUrl" class="auction-image" [alt]="auctionItem.name">
+              <i class="fas fa-heart favorite-icon"></i>
+          </div>
+          <div class="auction-content">
+              <span class="live-badge">Live Auction</span>
+              <div class="auction-title">{{ auctionItem.name }}</div>
+              <div class="bid-info">
+                  <div>Minimum Bid:</div>
+                  <div><strong>${{ auctionItem.minimumBid }}</strong></div>
+              </div>
+              <div class="bid-info">
+                  <div>Current Bid:</div>
+                  <div><strong>${{ auctionItem.currentBid }}</strong></div>
+              </div>
+              <div class="countdown">
+                  <strong>Ends in:</strong> {{ auctionItem.endTime }}
+              </div>              
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-8 mt-1">       
+        <div class="mb-8">
+          <h5 class="bid-subheader">Description</h5>
+          
+          <p>{{ auctionItem.description }}</p>
+        </div>
+        <div class="mb-4">
+          <h5 class="bid-subheader">Reviews</h5>
+          <div class="d-flex align-items-center mb-3">
+            <h6 class="me-3">Overall Rating:</h6>
+            <div>
+              <ng-container *ngFor="let star of [].constructor(4)">
+                <i class="bi bi-star-fill text-warning"></i>
+              </ng-container>
+              <ng-container *ngFor="let star of [].constructor(1)">
+                <i class="bi bi-star"></i>
+              </ng-container>
+            </div>
+          </div>
+          <div *ngFor="let review of reviews" class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-2 ml-1 d-flex  align-items-center">
+                <img [src]="review.avatarUrl" class="img-fluid rounded-circle" alt="Reviewer Avatar" />
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h6 class="card-title mb-1">{{ review.reviewer }}</h6>
+                  <small class="text-muted">{{ review.date }}</small>
+                  <p class="card-text mb-1">{{ review.comment }}</p>
+                  <div>
+                    <ng-container *ngFor="let star of [].constructor(review.rating)">
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </ng-container>
+                    <ng-container *ngFor="let star of [].constructor(5 - review.rating)">
+                      <i class="bi bi-star"></i>
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div class="col-lg-2 mb-2">      
+        <ul class="list-group">
+          <li 
+            *ngFor="let bid of bids; let i = index" 
+            class="list-group-item d-flex justify-content-between align-items-center"
+            [ngClass]="{'fw-bold': i === 0}">
+            {{ bid.bidder }} bids
+            <span class="fw-bold">${{ bid.amount }}</span>
+          </li>
+        </ul>
+        <div class="mt-3">
+          <button class="btn btn-primary btn-gradient col-lg-12 col-md-12" (click)="openModal()">Bid now <span class="right-icon"></span></button>
+        </div>
+      </div>
+     
+    </div>
+  </div>

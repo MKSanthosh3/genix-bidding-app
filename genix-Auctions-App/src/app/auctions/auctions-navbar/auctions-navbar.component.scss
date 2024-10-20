@@ -1,0 +1,55 @@
+.navbar {
+    background-color: #ffe4e1;
+  }
+  .brand-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  .logo {
+    height: 50px;
+  }
+  .nav-link {
+    margin-right: 15px;
+    font-weight: 600;
+    color: #333;
+  }
+  .nav-link:hover {
+    color: #0056b3;
+  }
+
+  .langauge-icon{
+    background-image: url('../../../assets/icons/langauge-icon.png');
+    background-repeat: no-repeat;
+    width:26px;
+    height: 26px;
+    
+    padding-right: 24px;
+}
+
+.nav-link{
+   
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.83px;
+    text-align: left;
+    color: #000000;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  right: 20%;
+  left:auto;
+   top:60px;
+  margin-top: var(--bs-dropdown-spacer);
+}
+
+.login-icon{
+  height:20px;
+  bottom: 10px;
+}
+
+.navbar {
+  background-color: #FFE5F1 !important;
+}
+

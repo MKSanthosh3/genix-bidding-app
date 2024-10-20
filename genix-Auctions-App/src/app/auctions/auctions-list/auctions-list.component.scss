@@ -1,0 +1,39 @@
+
+  .container-fluid {
+    background-color: #f8f9fa;
+  }
+ 
+  .card {
+    border-radius: 10px;
+  }
+  .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  @media (max-width: 991.98px) {
+    .signup-navbar {
+      position: relative;
+      box-shadow: none;
+    }
+    h1 {
+      font-size: 1.75rem;
+    }
+  }
+.right-icon{
+    background-image: url('../../../assets/icons/right-icon.png');
+    background-repeat: no-repeat;
+    width:16px;
+    height: 16px;
+    display: inline-block;  
+}
+
+
+.bid-list{
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:5%;
+}
+

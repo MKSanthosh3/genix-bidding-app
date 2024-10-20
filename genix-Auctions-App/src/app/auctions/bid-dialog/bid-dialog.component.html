@@ -1,0 +1,59 @@
+  <ng-container *ngIf="auctionItem$ | async as auctionItem">
+    <div *ngIf="!isBidSubmitted">
+      <div class="modal-header">
+        <h5 class="modal-title"><strong> Submit Bid </strong>|<span class="submit-header">{{ auctionItem.name }}</span> </h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <hr />
+      <div class="modal-body">
+        <div class="form-group mt-4">
+          <label for="straightBid">Straight bid</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" [(ngModel)]="straightBid" />
+            <button class="btn btn-outline-secondary" (click)="decrement('straightBid')">-</button>
+            <button class="btn btn-outline-secondary" (click)="increment('straightBid')">+</button>
+          </div>
+        </div>
+  
+        <div class="form-group mt-4">
+          <label for="maximumBid">Maximum bid</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" [(ngModel)]="maximumBid" />
+            <button class="btn btn-outline-secondary" (click)="decrement('maximumBid')">-</button>
+            <button class="btn btn-outline-secondary" (click)="increment('maximumBid')">+</button>
+          </div>
+        </div>
+  
+        <p><strong>Minimum Bid:</strong> ${{ auctionItem.minimumBid }}</p>
+        <p><strong>Current Bid:</strong> ${{ auctionItem.currentBid }}</p>
+        <p><strong>Ends in:</strong> {{ auctionItem.endTime }}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="closePopup()">Cancel</button>
+        <button class="btn btn-primary" (click)="submitBid()">Submit</button>
+      </div>
+    </div>
+  
+    <div *ngIf="isBidSubmitted" class="text-center">
+      <div class="modal-header">
+        <h5 class="modal-title">Submit Bid | {{ auctionItem.name }}</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <hr />
+      <div class="modal-body">
+        <div class="my-4">
+          <img src="../../../assets/images/bid/bid-success-icon.png" alt="Success" class="mb-3" />
+          <h5 class="fw-bold">Bid submitted successfully!</h5>
+          <p>Thank you!</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+  <div *ngIf="!(auctionItem$ | async)">
+    <p>Loading auction details...</p>
+  </div>
+  
+  
